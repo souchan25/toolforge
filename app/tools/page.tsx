@@ -7,7 +7,7 @@ import { Search, ArrowRight } from "lucide-react";
 import { TOOLS, CATEGORY_LABELS, type ToolCategory } from "@/lib/tools/registry";
 import { getToolIcon } from "@/lib/tools/icons";
 
-const ALL_CATEGORIES: (ToolCategory | "all")[] = ["all", "text", "json", "css", "color", "devutils", "code"];
+const ALL_CATEGORIES: (ToolCategory | "all")[] = ["all", "text", "json", "css", "color", "devutils", "code", "network"];
 
 const CATEGORY_COLORS: Record<string, string> = {
   all: "#818cf8",
@@ -17,6 +17,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   color: "#f59e0b",
   devutils: "#0891b2",
   code: "#f43f5e",
+  network: "#ef4444",
 };
 
 export default function ToolsPage() {

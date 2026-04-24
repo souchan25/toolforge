@@ -2,7 +2,7 @@
 // Central registry of all tools — single source of truth
 
 export type ToolBadge = "new" | "popular" | "free";
-export type ToolCategory = "text" | "json" | "css" | "color" | "devutils" | "code";
+export type ToolCategory = "text" | "json" | "css" | "color" | "devutils" | "code" | "network";
 
 export interface Tool {
   id: string;
@@ -26,6 +26,7 @@ export const CATEGORY_LABELS: Record<ToolCategory, string> = {
   color: "Color",
   devutils: "Dev Utils",
   code: "Code",
+  network: "Network & Security",
 };
 
 export const TOOLS: Tool[] = [
@@ -144,6 +145,48 @@ export const TOOLS: Tool[] = [
     howToUse: ["Paste your JSON in the input.", "Click Validate.", "A green check means valid JSON; errors show the exact problem location."],
     relatedSlugs: ["json-formatter", "json-minifier", "json-to-csv"],
   },
+  {
+    id: "json-to-ts",
+    slug: "json-to-ts",
+    name: "JSON to TypeScript",
+    shortDescription: "Convert JSON objects into TypeScript interfaces automatically.",
+    description: "Paste any JSON and instantly generate TypeScript interfaces or types. Automatically infers primitives, nested objects, and arrays.",
+    category: "json",
+    categoryLabel: "JSON",
+    icon: "Braces",
+    badge: "new",
+    keywords: ["json", "typescript", "ts", "types", "interface", "converter"],
+    howToUse: ["Paste your JSON in the left panel.", "TypeScript interfaces are generated in real-time.", "Copy the result to your clipboard."],
+    relatedSlugs: ["json-formatter", "json-validator", "xml-to-json"],
+  },
+  {
+    id: "xml-to-json",
+    slug: "xml-to-json",
+    name: "XML ↔ JSON Converter",
+    shortDescription: "Convert XML data to JSON format and vice versa.",
+    description: "Bi-directional conversion between XML and JSON formats. Paste your code in either panel and get the converted output instantly.",
+    category: "json",
+    categoryLabel: "JSON",
+    icon: "Code2",
+    badge: "free",
+    keywords: ["xml", "json", "converter", "format"],
+    howToUse: ["Paste XML in the left panel or JSON in the right.", "The conversion happens automatically.", "Use the Swap button to reverse the layout."],
+    relatedSlugs: ["json-formatter", "yaml-to-json", "json-to-csv"],
+  },
+  {
+    id: "yaml-to-json",
+    slug: "yaml-to-json",
+    name: "YAML ↔ JSON Converter",
+    shortDescription: "Convert YAML configuration files to JSON and vice versa.",
+    description: "Easily convert between YAML and JSON formats. Essential for working with DevOps configurations, Kubernetes manifests, and API specifications.",
+    category: "json",
+    categoryLabel: "JSON",
+    icon: "FileText",
+    badge: "free",
+    keywords: ["yaml", "json", "yml", "converter", "config"],
+    howToUse: ["Paste YAML in the left panel or JSON in the right.", "The conversion happens automatically.", "Toggle formatting options if needed."],
+    relatedSlugs: ["json-formatter", "xml-to-json", "json-validator"],
+  },
 
   // ──── CSS Tools ────
   {
@@ -202,6 +245,34 @@ export const TOOLS: Tool[] = [
     howToUse: ["Drag any of the 4 corner sliders.", "Toggle 'Lock All' to set all corners at once.", "Copy the CSS border-radius value."],
     relatedSlugs: ["box-shadow-generator", "css-gradient-generator", "css-minifier"],
   },
+  {
+    id: "flexbox-generator",
+    slug: "flexbox-generator",
+    name: "Flexbox Generator",
+    shortDescription: "Build CSS flexbox layouts visually and copy the code.",
+    description: "Visual CSS Flexbox playground. Control justify-content, align-items, flex-direction, and gap with a live preview of child elements.",
+    category: "css",
+    categoryLabel: "CSS",
+    icon: "Layout",
+    badge: "new",
+    keywords: ["css", "flexbox", "flex", "layout", "generator"],
+    howToUse: ["Adjust flex properties using the controls.", "See the layout change in real-time.", "Copy the generated CSS snippet."],
+    relatedSlugs: ["css-grid-generator", "css-gradient-generator", "box-shadow-generator"],
+  },
+  {
+    id: "css-grid-generator",
+    slug: "css-grid-generator",
+    name: "CSS Grid Generator",
+    shortDescription: "Build complex CSS Grid layouts visually.",
+    description: "Visually construct CSS Grid layouts. Define columns, rows, and gaps, and let the tool generate the exact CSS you need.",
+    category: "css",
+    categoryLabel: "CSS",
+    icon: "Grid",
+    badge: "popular",
+    keywords: ["css", "grid", "layout", "generator", "template"],
+    howToUse: ["Set the number of columns and rows.", "Adjust the gap sizes.", "Copy the generated grid CSS."],
+    relatedSlugs: ["flexbox-generator", "css-minifier", "box-shadow-generator"],
+  },
 
   // ──── Color Tools ────
   {
@@ -245,6 +316,20 @@ export const TOOLS: Tool[] = [
     keywords: ["contrast", "accessibility", "wcag", "a11y", "color"],
     howToUse: ["Enter a foreground (text) color.", "Enter a background color.", "See contrast ratio, AA/AAA status, and a live preview of the text on the background."],
     relatedSlugs: ["color-picker", "color-palette"],
+  },
+  {
+    id: "image-color-extractor",
+    slug: "image-color-extractor",
+    name: "Image Color Extractor",
+    shortDescription: "Extract dominant colors and palettes from any image.",
+    description: "Upload an image to automatically extract its dominant color and a cohesive color palette. Perfect for matching designs to photos.",
+    category: "color",
+    categoryLabel: "Color",
+    icon: "Image",
+    badge: "new",
+    keywords: ["color", "palette", "image", "extract", "thief"],
+    howToUse: ["Upload or drag-and-drop an image.", "Wait a moment for the colors to be processed.", "Click any extracted HEX code to copy it."],
+    relatedSlugs: ["color-picker", "color-palette", "contrast-checker"],
   },
 
   // ──── Dev Utilities ────
@@ -332,6 +417,63 @@ export const TOOLS: Tool[] = [
     howToUse: ["Enter a Unix timestamp (seconds or ms) to convert to date.", "Or enter a date to get its Unix timestamp.", "Use 'Now' to grab the current timestamp."],
     relatedSlugs: ["uuid-generator", "hash-generator", "url-encoder"],
   },
+  {
+    id: "cron-generator",
+    slug: "cron-generator",
+    name: "Cron Job Generator",
+    shortDescription: "Build cron expressions visually with human-readable output.",
+    description: "Easily generate cron schedule expressions using a visual UI. Get an instant human-readable translation (e.g., 'At 12:00 PM on Friday').",
+    category: "devutils",
+    categoryLabel: "Dev Utils",
+    icon: "CalendarClock",
+    badge: "popular",
+    keywords: ["cron", "schedule", "job", "time", "generator"],
+    howToUse: ["Use the tabs to set minutes, hours, days, and months.", "View the generated cron string and its translation.", "Copy the string for your crontab."],
+    relatedSlugs: ["timestamp-converter", "regex-tester", "uuid-generator"],
+  },
+  {
+    id: "qrcode-generator",
+    slug: "qrcode-generator",
+    name: "QR Code Generator",
+    shortDescription: "Create QR codes for URLs, text, and contact info.",
+    description: "Generate high-quality QR codes instantly. Enter any URL or text, customize colors, and download as PNG or SVG for your projects.",
+    category: "devutils",
+    categoryLabel: "Dev Utils",
+    icon: "QrCode",
+    badge: "free",
+    keywords: ["qr", "code", "generator", "url", "scan"],
+    howToUse: ["Enter your URL or text in the input.", "The QR code updates instantly.", "Click download to save it as an image."],
+    relatedSlugs: ["url-encoder", "base64", "uuid-generator"],
+  },
+  // ──── Network & Security ────
+  {
+    id: "jwt-decoder",
+    slug: "jwt-decoder",
+    name: "JWT Decoder",
+    shortDescription: "Decode JSON Web Tokens and view header/payload.",
+    description: "Paste a JWT to decode its header and payload instantly. Useful for debugging authentication issues without needing the secret key.",
+    category: "network",
+    categoryLabel: "Network & Security",
+    icon: "Key",
+    badge: "popular",
+    keywords: ["jwt", "token", "decode", "auth", "security", "json web token"],
+    howToUse: ["Paste your JWT string.", "The header and payload will be displayed as formatted JSON.", "The tool runs purely in the browser; tokens are never sent to a server."],
+    relatedSlugs: ["base64", "hash-generator", "json-formatter"],
+  },
+  {
+    id: "dns-lookup",
+    slug: "dns-lookup",
+    name: "DNS & IP Lookup",
+    shortDescription: "Check DNS records and your current public IP.",
+    description: "Perform quick DNS record lookups (A, AAAA, MX, TXT, CNAME) for any domain. Also displays your current public IP address.",
+    category: "network",
+    categoryLabel: "Network & Security",
+    icon: "Globe",
+    badge: "new",
+    keywords: ["dns", "ip", "lookup", "domain", "records", "network"],
+    howToUse: ["Enter a domain name to lookup records.", "Wait for the fetch to complete to view the results table.", "Your current IP is shown at the top."],
+    relatedSlugs: ["url-encoder", "regex-tester", "base64"],
+  },
 
   // ──── Code Tools ────
   {
@@ -375,6 +517,34 @@ export const TOOLS: Tool[] = [
     keywords: ["code", "image", "screenshot", "carbon", "snippet", "social"],
     howToUse: ["Paste your code snippet.", "Choose the language for syntax highlighting.", "Pick a background and theme.", "Click Download PNG."],
     relatedSlugs: ["markdown-previewer", "html-formatter", "json-formatter"],
+  },
+  {
+    id: "sql-formatter",
+    slug: "sql-formatter",
+    name: "SQL Formatter",
+    shortDescription: "Beautify messy SQL queries into readable code.",
+    description: "Format and indent complex SQL queries. Supports standard SQL, PostgreSQL, MySQL, and more dialects. Perfect for database debugging.",
+    category: "code",
+    categoryLabel: "Code",
+    icon: "Database",
+    badge: "free",
+    keywords: ["sql", "format", "beautify", "query", "database"],
+    howToUse: ["Paste your messy SQL query.", "Choose your SQL dialect if necessary.", "Copy the formatted output."],
+    relatedSlugs: ["html-formatter", "json-formatter", "css-minifier"],
+  },
+  {
+    id: "js-minifier",
+    slug: "js-minifier",
+    name: "JS / TS Minifier & Formatter",
+    shortDescription: "Minify or beautify JavaScript/TypeScript code.",
+    description: "Quickly format messy JavaScript and TypeScript code, or minify it to save space. Uses Prettier under the hood for reliable formatting.",
+    category: "code",
+    categoryLabel: "Code",
+    icon: "FileCode",
+    badge: "new",
+    keywords: ["javascript", "js", "typescript", "ts", "minify", "format", "beautify"],
+    howToUse: ["Paste your code.", "Click Format to beautify, or Minify to compress.", "Copy the result."],
+    relatedSlugs: ["html-formatter", "css-minifier", "json-formatter"],
   },
 ];
 

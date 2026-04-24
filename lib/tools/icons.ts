@@ -26,6 +26,14 @@ import {
   FileCode,
   BookOpen,
   ImageIcon,
+  Key,
+  Globe,
+  Database,
+  Layout,
+  Grid,
+  CalendarClock,
+  QrCode,
+  Image as ImageLucide,
   type LucideIcon,
 } from "lucide-react";
 
@@ -54,6 +62,14 @@ export const ICON_MAP: Record<string, LucideIcon> = {
   FileCode,
   BookOpen,
   ImageIcon,
+  Key,
+  Globe,
+  Database,
+  Layout,
+  Grid,
+  CalendarClock,
+  QrCode,
+  Image: ImageLucide,
 };
 
 export function getToolIcon(iconName: string): LucideIcon {
