@@ -1,11 +1,11 @@
 # ToolForge
 
-ToolForge is a suite of developer utilities designed to provide a fast and secure experience for everyday developer tasks.
+ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools built with a futuristic **Glassmorphism** design. It provides a seamless, fast, and privacy-focused experience for everyday developer tasks.
 
 ## Features
 
-- **Local Processing:** All tools process data locally in your browser. No data is sent to an external server.
-- **Included Tools:**
+- **🎨 Glassmorphism UI:** Stunning frosted-glass interface with vibrant ambient background blobs.
+- **🚀 20+ Essential Tools:**
   - **Text:** Word Counter, Case Converter, Lorem Ipsum Generator, Text Diff.
   - **JSON:** Formatter, Minifier, Validator, JSON to CSV.
   - **CSS:** Minifier, Gradient Generator, Box Shadow, Border Radius.
@@ -18,7 +18,7 @@ ToolForge is a suite of developer utilities designed to provide a fast and secur
 
 - **Framework:** [Next.js 15 (App Router)](https://nextjs.org/)
 - **UI Library:** [React 19](https://react.dev/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) + Custom Glassmorphism CSS
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Animation:** [Framer Motion](https://www.framer.com/motion/)
 - **Type Safety:** [TypeScript](https://www.typescriptlang.org/)
@@ -33,17 +33,20 @@ ToolForge is a suite of developer utilities designed to provide a fast and secur
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/souchan25/DevToolsMicroSaas.git
    cd DevToolsMicroSaas/toolforge
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
