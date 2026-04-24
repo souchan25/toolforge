@@ -1,0 +1,61 @@
+// lib/tools/icons.ts
+// Maps registry icon names to actual Lucide icon components
+
+import {
+  AlignLeft,
+  Type,
+  FileText,
+  GitCompare,
+  Braces,
+  Minimize2,
+  Table,
+  ShieldCheck,
+  Code2,
+  Palette,
+  Square,
+  CircleDot,
+  Pipette,
+  SwatchBook,
+  Eye,
+  Regex,
+  Lock,
+  Link,
+  Hash,
+  Fingerprint,
+  Clock,
+  FileCode,
+  BookOpen,
+  ImageIcon,
+  type LucideIcon,
+} from "lucide-react";
+
+export const ICON_MAP: Record<string, LucideIcon> = {
+  AlignLeft,
+  Type,
+  FileText,
+  GitCompare,
+  Braces,
+  Minimize2,
+  Table,
+  ShieldCheck,
+  Code2,
+  Palette,
+  Square,
+  RoundedCorner: CircleDot,
+  Pipette,
+  Swatch: SwatchBook,
+  Eye,
+  Regex,
+  Lock,
+  Link,
+  Hash,
+  Fingerprint,
+  Clock,
+  FileCode,
+  BookOpen,
+  ImageIcon,
+};
+
+export function getToolIcon(iconName: string): LucideIcon {
+  return ICON_MAP[iconName] ?? Code2;
+}
