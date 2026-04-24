@@ -3,7 +3,6 @@ import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { BackgroundBlobs } from "@/components/layout/BackgroundBlobs";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 const inter = Inter({
@@ -67,7 +66,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jakarta.variable} ${mono.variable}`} suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <BackgroundBlobs />
           <Navbar />
           <main>{children}</main>
           <Footer />

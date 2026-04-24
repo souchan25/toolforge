@@ -1,10 +1,10 @@
 # ToolForge ⚒️
 
-ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools built with a futuristic **Glassmorphism** design. It provides a seamless, fast, and privacy-focused experience for everyday developer tasks.
+ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools built with a sleek modern design. It provides a seamless, fast, and privacy-focused experience for everyday developer tasks.
 
 ## ✨ Features
 
-- **🎨 Glassmorphism UI:** Stunning frosted-glass interface with vibrant ambient background blobs.
+- **🎨 Premium UI:** Clean, dark-mode focused interface.
 - **🚀 20+ Essential Tools:**
   - **Text:** Word Counter, Case Converter, Lorem Ipsum Generator, Text Diff.
   - **JSON:** Formatter, Minifier, Validator, JSON to CSV.
@@ -20,7 +20,7 @@ ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools
 
 - **Framework:** [Next.js 15 (App Router)](https://nextjs.org/)
 - **UI Library:** [React 19](https://react.dev/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) + Custom Glassmorphism CSS
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) + Custom CSS
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Animation:** [Framer Motion](https://www.framer.com/motion/)
 - **Type Safety:** [TypeScript](https://www.typescriptlang.org/)

@@ -94,8 +94,9 @@ export default function LandingPage() {
 
         {/* Headline */}
         <h1
-          className="gradient-text animate-fadeInUp"
+          className="animate-fadeInUp"
           style={{
+            color: "var(--color-text-primary)",
             fontFamily: "var(--font-display)",
             fontSize: "clamp(42px, 7vw, 72px)",
             fontWeight: 800,
@@ -108,7 +109,7 @@ export default function LandingPage() {
         >
           Developer Tools,{" "}
           <br />
-          <span style={{ background: "linear-gradient(90deg, #6366f1, #8b5cf6, #0891b2)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+          <span style={{ color: "var(--color-primary-light)" }}>
             Forged to Perfection.
           </span>
         </h1>
@@ -318,7 +319,7 @@ export default function LandingPage() {
           style={{
             padding: "56px 40px",
             textAlign: "center",
-            background: "linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(139,92,246,0.12) 100%)",
+            background: "var(--color-surface-high)",
             borderColor: "rgba(99,102,241,0.3)",
           }}
         >
