@@ -73,9 +73,8 @@ body::before {
 
 /* ─── Glass Card ─── */
 .glass-card {
-  background: var(--color-glass-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--color-surface);
+
   border: 1px solid var(--color-glass-border);
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -89,9 +88,8 @@ body::before {
 }
 
 .glass-card-static {
-  background: var(--color-glass-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--color-surface);
+
   border: 1px solid var(--color-glass-border);
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -216,22 +214,6 @@ body::before {
   color: #818cf8;
 }
 
-/* ─── Animated Background Blobs ─── */
-.blob {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: -1;
-  animation: blobFloat 25s ease-in-out infinite alternate;
-}
-
-@keyframes blobFloat {
-  0%   { transform: scale(1) translate(0, 0); }
-  33%  { transform: scale(1.08) translate(2%, -3%); }
-  66%  { transform: scale(0.95) translate(-2%, 2%); }
-  100% { transform: scale(1.05) translate(1%, -1%); }
-}
 
 /* ─── Card Entrance Animation ─── */
 @keyframes fadeInUp {
@@ -242,21 +224,6 @@ body::before {
 .animate-fadeInUp {
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
-}
-
-/* ─── Gradient Text ─── */
-.gradient-text {
-  background: linear-gradient(90deg, #f1f5f9 0%, #818cf8 60%, #0891b2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-purple {
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* ─── Scrollbar ─── */
