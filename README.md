@@ -66,10 +66,6 @@ toolforge/
 └── styles/            # Global CSS & Tailwind configuration
 ```
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
 ## Contributing
 
 Contributions are welcome. Please feel free to submit a Pull Request.
