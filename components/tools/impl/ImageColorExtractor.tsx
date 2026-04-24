@@ -27,30 +27,25 @@ export function ImageColorExtractor() {
   const handleImageLoad = async () => {
     if (!imgRef.current) return;
     try {
-      const ColorThiefModule = await import("colorthief");
-      // @ts-ignore
-      const ColorThief = ColorThiefModule.default || ColorThiefModule;
-      // @ts-ignore
-      const colorThief = new (ColorThief.default || ColorThief)();
+      const { getColorSync, getPaletteSync } = await import("colorthief");
+      
       // Get dominant color
-      const dominant = colorThief.getColor(imgRef.current);
-      setDominantColor(rgbToHex(dominant[0], dominant[1], dominant[2]));
+      const dominant = getColorSync(imgRef.current);
+      if (dominant) {
+        setDominantColor(dominant.hex());
+      }
 
-      // Get palette (e.g. 5 colors)
-      const paletteArray = colorThief.getPalette(imgRef.current, 6);
-      const hexPalette = paletteArray.map((rgb: number[]) => rgbToHex(rgb[0], rgb[1], rgb[2]));
-      setPalette(hexPalette);
+      // Get palette (e.g. 6 colors)
+      const paletteArray = getPaletteSync(imgRef.current, { colorCount: 6 });
+      if (paletteArray) {
+        setPalette(paletteArray.map((c: any) => c.hex()));
+      }
     } catch (e) {
       console.error("Failed to extract colors", e);
     }
   };
 
-  const rgbToHex = (r: number, g: number, b: number) => {
-    return "#" + [r, g, b].map(x => {
-      const hex = x.toString(16);
-      return hex.length === 1 ? "0" + hex : hex;
-    }).join("");
-  };
+
 
   const handleCopy = (color: string) => {
     navigator.clipboard.writeText(color);
