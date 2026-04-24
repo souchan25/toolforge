@@ -1,31 +1,29 @@
-# ToolForge ⚒️
+# ToolForge
 
-ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools built with a futuristic **Glassmorphism** design. It provides a seamless, fast, and privacy-focused experience for everyday developer tasks.
+ToolForge is a suite of developer utilities designed to provide a fast and secure experience for everyday developer tasks.
 
-## ✨ Features
+## Features
 
-- **🎨 Glassmorphism UI:** Stunning frosted-glass interface with vibrant ambient background blobs.
-- **🚀 20+ Essential Tools:**
+- **Local Processing:** All tools process data locally in your browser. No data is sent to an external server.
+- **Included Tools:**
   - **Text:** Word Counter, Case Converter, Lorem Ipsum Generator, Text Diff.
   - **JSON:** Formatter, Minifier, Validator, JSON to CSV.
   - **CSS:** Minifier, Gradient Generator, Box Shadow, Border Radius.
   - **Color:** Picker & Converter, Palette Generator, Contrast Checker.
   - **Dev Utils:** Regex Tester, Base64 Encoder/Decoder, Hash Generator, UUID Generator, Timestamp Converter.
   - **Code:** HTML Formatter, Markdown Previewer, Code to Image.
-- **🔒 Privacy First:** All processing happens locally in your browser. No data is ever sent to a server.
-- **📱 Fully Responsive:** Optimized for desktop, tablet, and mobile devices.
-- **⚡ Performance:** Built with Next.js 15+ and React 19 for blazing-fast performance.
+- **Responsive Design:** Functional on desktop, tablet, and mobile devices.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** [Next.js 15 (App Router)](https://nextjs.org/)
 - **UI Library:** [React 19](https://react.dev/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) + Custom Glassmorphism CSS
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Animation:** [Framer Motion](https://www.framer.com/motion/)
 - **Type Safety:** [TypeScript](https://www.typescriptlang.org/)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -36,8 +34,8 @@ ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/toolforge.git
-   cd toolforge
+   git clone https://github.com/souchan25/DevToolsMicroSaas.git
+   cd DevToolsMicroSaas/toolforge
    ```
 
 2. Install dependencies:
@@ -52,7 +50,7 @@ ToolForge is a modern, premium suite of developer utilities and micro-SaaS tools
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 toolforge/
@@ -65,10 +63,10 @@ toolforge/
 └── styles/            # Global CSS & Tailwind configuration
 ```
 
-## 📜 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## 🙌 Contributing
+## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please feel free to submit a Pull Request.
