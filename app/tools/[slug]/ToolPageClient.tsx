@@ -5,7 +5,6 @@
 import type { Tool } from "@/lib/tools/registry";
 import { HowToUse } from "@/components/tools/HowToUse";
 import { RelatedTools } from "@/components/tools/RelatedTools";
-import { AdSlot } from "@/components/tools/AdSlot";
 import { ToolHeader } from "@/components/tools/ToolHeader";
 
 // Tool imports
@@ -71,9 +70,6 @@ export function ToolPageClient({ tool, relatedTools }: Props) {
 
   return (
     <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "40px 24px 80px" }}>
-      {/* Top Banner Ad */}
-      <AdSlot type="banner" style={{ marginBottom: "32px" }} />
-
       <ToolHeader tool={tool} />
 
       <div className="tool-main-layout" style={{ marginTop: "32px" }}>
@@ -88,20 +84,13 @@ export function ToolPageClient({ tool, relatedTools }: Props) {
           )}
 
           <HowToUse steps={tool.howToUse} style={{ marginTop: "24px" }} />
-          
-          {/* Bottom Ad (Mobile only) */}
-          <div className="lg:hidden">
-            <AdSlot type="bottom" style={{ marginTop: "24px" }} />
-          </div>
         </div>
 
         {/* Sidebar */}
         <aside style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          <AdSlot type="sidebar" />
           {relatedTools.length > 0 && (
             <RelatedTools tools={relatedTools} />
           )}
-          <AdSlot type="bottom" className="hidden lg:flex" />
         </aside>
       </div>
     </div>

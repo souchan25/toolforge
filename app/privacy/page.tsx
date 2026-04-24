@@ -10,7 +10,6 @@ export default function PrivacyPage() {
   const sections = [
     { title: "Data Collection", body: "ToolForge does not collect, transmit, or store any personal data. All tool processing happens entirely within your browser. We have no backend database." },
     { title: "Cookies", body: "We do not use tracking cookies. We may use anonymous analytics (e.g. page views) in the future, but no personally identifiable data will ever be collected." },
-    { title: "Ad Placements", body: "We plan to use Google AdSense for non-intrusive advertising. AdSense may use cookies to serve relevant ads per Google's own privacy policy." },
     { title: "Third-Party Services", body: "We use Google Fonts (loaded from Google CDN) and no other third-party APIs that process your data." },
     { title: "Your Data", body: "Since all computation happens in your browser, any data you paste into our tools is never seen by us. Refreshing the page clears all inputs." },
     { title: "Changes", body: "We may update this policy occasionally. Continued use of ToolForge after changes indicates acceptance of the updated policy." },

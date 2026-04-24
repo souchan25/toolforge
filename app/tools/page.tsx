@@ -3,7 +3,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Search, ArrowRight, Code2, AlignLeft, Braces, Palette, Hash, Filter } from "lucide-react";
+import { Search, ArrowRight } from "lucide-react";
 import { TOOLS, CATEGORY_LABELS, type ToolCategory } from "@/lib/tools/registry";
 import { getToolIcon } from "@/lib/tools/icons";
 
@@ -233,12 +233,6 @@ export default function ToolsPage() {
           </button>
         </div>
       )}
-
-      {/* Ad Slot — in-feed */}
-      <div className="ad-slot" style={{ minHeight: "90px", marginTop: "48px", padding: "16px" }}>
-        <span>Advertisement</span>
-        <span style={{ fontSize: "9px", opacity: 0.5 }}>Google AdSense — Responsive Ad Unit</span>
-      </div>
     </div>
   );
 }

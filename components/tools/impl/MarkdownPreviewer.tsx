@@ -31,7 +31,7 @@ export function MarkdownPreviewer() {
 
   const html = useMemo(() => {
     marked.setOptions({ gfm: true, breaks: true });
-    return marked.parseSync(markdown) as string;
+    return marked.parse(markdown) as string;
   }, [markdown]);
 
   const copy = () => {
