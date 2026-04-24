@@ -1,8 +1,8 @@
 // app/page.tsx — Landing Page
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Zap, Code2, Palette, Hash, Braces, AlignLeft, Shield, Users, Star, GitBranch } from "lucide-react";
-import { TOOLS, CATEGORY_LABELS, type ToolCategory } from "@/lib/tools/registry";
+import { ArrowRight, Zap, Code2, Palette, Hash, Braces, AlignLeft, Shield, GitBranch } from "lucide-react";
+import { TOOLS, type ToolCategory } from "@/lib/tools/registry";
 import { getToolIcon } from "@/lib/tools/icons";
 
 export const metadata: Metadata = {

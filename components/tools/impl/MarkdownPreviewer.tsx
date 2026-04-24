@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Copy, Check, Download } from "lucide-react";
 import { marked } from "marked";
 
@@ -27,17 +27,15 @@ console.log(hello);
 
 export function MarkdownPreviewer() {
   const [markdown, setMarkdown] = useState(DEFAULT_MD);
-  const [html, setHtml] = useState("");
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
+  const html = useMemo(() => {
     marked.setOptions({ gfm: true, breaks: true });
-    const result = marked.parse(markdown);
-    if (typeof result === "string") setHtml(result);
-    else result.then(setHtml);
+    return marked.parseSync(markdown) as string;
   }, [markdown]);
 
-  const copy = () => { navigator.clipboard.writeText(markdown); setCopied(true); setTimeout(() => setCopied(false), 2000); };
+  const copy = () => {
+ navigator.clipboard.writeText(markdown); setCopied(true); setTimeout(() => setCopied(false), 2000); };
 
   const downloadHtml = () => {
     const full = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Export</title></head><body>${html}</body></html>`;

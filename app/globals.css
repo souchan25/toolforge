@@ -362,12 +362,13 @@ select.glass-input {
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 36px;
+  color-scheme: dark;
 }
 
 select.glass-input option {
-  background: #1b1b23;
+  background: #13131b;
   color: #f1f5f9;
-  padding: 8px;
+  padding: 12px;
 }
 
 /* ─── Native Checkbox Styling ─── */
@@ -401,7 +402,19 @@ input[type="checkbox"]:checked::after {
   transform: rotate(45deg);
 }
 
-/* ─── Responsive Two-Column Grid ─── */
+/* ─── Responsive Tool Layout ─── */
+.tool-main-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .tool-main-layout {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
 .tool-two-col {
   display: grid;
   grid-template-columns: 1fr;

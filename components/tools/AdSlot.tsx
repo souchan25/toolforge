@@ -3,6 +3,7 @@
 interface Props {
   type: "banner" | "sidebar" | "bottom";
   style?: React.CSSProperties;
+  className?: string;
 }
 
 const MIN_HEIGHTS: Record<Props["type"], string> = {
@@ -11,10 +12,10 @@ const MIN_HEIGHTS: Record<Props["type"], string> = {
   bottom: "90px",
 };
 
-export function AdSlot({ type, style }: Props) {
+export function AdSlot({ type, style, className = "" }: Props) {
   return (
     <div
-      className="ad-slot"
+      className={`ad-slot ${className}`}
       style={{ minHeight: MIN_HEIGHTS[type], ...style }}
     >
       <span>Advertisement</span>

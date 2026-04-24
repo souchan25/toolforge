@@ -76,25 +76,34 @@ export function ToolPageClient({ tool, relatedTools }: Props) {
 
       <ToolHeader tool={tool} />
 
-      <div style={{ marginTop: "32px" }}>
-        {ToolComponent ? (
-          <ToolComponent />
-        ) : (
-          <div className="glass-card-static" style={{ padding: "48px", textAlign: "center" }}>
-            <p style={{ color: "#94a3b8", fontFamily: "var(--font-sans)" }}>Tool coming soon.</p>
+      <div className="tool-main-layout" style={{ marginTop: "32px" }}>
+        {/* Main Content */}
+        <div>
+          {ToolComponent ? (
+            <ToolComponent />
+          ) : (
+            <div className="glass-card-static" style={{ padding: "48px", textAlign: "center" }}>
+              <p style={{ color: "#94a3b8", fontFamily: "var(--font-sans)" }}>Tool coming soon.</p>
+            </div>
+          )}
+
+          <HowToUse steps={tool.howToUse} style={{ marginTop: "24px" }} />
+          
+          {/* Bottom Ad (Mobile only) */}
+          <div className="lg:hidden">
+            <AdSlot type="bottom" style={{ marginTop: "24px" }} />
           </div>
-        )}
+        </div>
 
-        <HowToUse steps={tool.howToUse} style={{ marginTop: "24px" }} />
-
-        {/* Bottom Ad */}
-        <AdSlot type="bottom" style={{ marginTop: "24px" }} />
+        {/* Sidebar */}
+        <aside style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <AdSlot type="sidebar" />
+          {relatedTools.length > 0 && (
+            <RelatedTools tools={relatedTools} />
+          )}
+          <AdSlot type="bottom" className="hidden lg:flex" />
+        </aside>
       </div>
-
-      {/* Related Tools */}
-      {relatedTools.length > 0 && (
-        <RelatedTools tools={relatedTools} style={{ marginTop: "48px" }} />
-      )}
     </div>
   );
 }

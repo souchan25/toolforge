@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Copy, Check } from "lucide-react";
 
 type CaseType = "upper" | "lower" | "title" | "sentence" | "camel" | "pascal" | "snake" | "kebab";
@@ -32,13 +32,10 @@ function convertCase(text: string, type: CaseType): string {
 
 export function CaseConverter() {
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
   const [activeCase, setActiveCase] = useState<CaseType>("title");
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    setOutput(convertCase(input, activeCase));
-  }, [input, activeCase]);
+  const output = useMemo(() => convertCase(input, activeCase), [input, activeCase]);
 
   const copy = () => {
     navigator.clipboard.writeText(output);

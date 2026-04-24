@@ -34,12 +34,6 @@ export function Navbar() {
     : [];
 
   useEffect(() => {
-    setMenuOpen(false);
-    setSearchOpen(false);
-    setQuery("");
-  }, [pathname]);
-
-  useEffect(() => {
     if (searchOpen && inputRef.current) inputRef.current.focus();
   }, [searchOpen]);
 
@@ -75,6 +69,12 @@ export function Navbar() {
     { href: "/contact", label: "Contact", icon: Mail },
   ];
 
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setSearchOpen(false);
+    setQuery("");
+  };
+
   return (
     <>
       <header
@@ -103,7 +103,7 @@ export function Navbar() {
           }}
         >
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
+          <Link href="/" onClick={closeMenus} style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
             <div
               style={{
                 width: "32px",
@@ -141,6 +141,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
+                onClick={closeMenus}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -185,7 +186,7 @@ export function Navbar() {
             </button>
 
             {/* CTA */}
-            <Link href="/tools" className="btn-primary hidden md:inline-flex" style={{ fontSize: "13px", padding: "8px 18px" }}>
+            <Link href="/tools" onClick={closeMenus} className="btn-primary hidden md:inline-flex" style={{ fontSize: "13px", padding: "8px 18px" }}>
               Browse Tools
             </Link>
 
@@ -216,6 +217,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
+                onClick={closeMenus}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -236,6 +238,7 @@ export function Navbar() {
             ))}
             <Link
               href="/tools"
+              onClick={closeMenus}
               className="btn-primary"
               style={{ marginTop: "8px", justifyContent: "center" }}
             >

@@ -3,9 +3,13 @@ import { useState } from "react";
 import { Copy, Check, RefreshCw, Clipboard } from "lucide-react";
 
 function uuidV4(): string {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-    const r = (crypto.getRandomValues(new Uint8Array(1))[0] & 15) >> (c === "x" ? 0 : 1);
-    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+    const r = (crypto.getRandomValues(new Uint8Array(1))[0] & 15);
+    const v = c === "x" ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
   });
 }
 

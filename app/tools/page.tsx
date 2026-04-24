@@ -7,15 +7,6 @@ import { Search, ArrowRight, Code2, AlignLeft, Braces, Palette, Hash, Filter } f
 import { TOOLS, CATEGORY_LABELS, type ToolCategory } from "@/lib/tools/registry";
 import { getToolIcon } from "@/lib/tools/icons";
 
-const ICONS = {
-  Code2,
-  AlignLeft,
-  Braces,
-  Palette,
-  Hash,
-  Filter,
-};
-
 const ALL_CATEGORIES: (ToolCategory | "all")[] = ["all", "text", "json", "css", "color", "devutils", "code"];
 
 const CATEGORY_COLORS: Record<string, string> = {

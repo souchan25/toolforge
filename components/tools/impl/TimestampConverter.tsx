@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Copy, Check, Clock } from "lucide-react";
 
 export function TimestampConverter() {
@@ -9,13 +9,7 @@ export function TimestampConverter() {
 
   const copy = (val: string) => { navigator.clipboard.writeText(val); setCopied(val); setTimeout(() => setCopied(null), 2000); };
 
-  const now = () => {
-    const n = Math.floor(Date.now() / 1000);
-    setTs(String(n));
-    convertTs(String(n));
-  };
-
-  const convertTs = (val: string) => {
+  const convertTs = useCallback((val: string) => {
     setTs(val);
     const n = Number(val);
     if (!isNaN(n) && val.trim()) {
@@ -24,7 +18,13 @@ export function TimestampConverter() {
     } else {
       setDate("");
     }
-  };
+  }, []);
+
+  const now = useCallback(() => {
+    const n = Math.floor(Date.now() / 1000);
+    setTs(String(n));
+    convertTs(String(n));
+  }, [convertTs]);
 
   const convertDate = (val: string) => {
     setDate(val);

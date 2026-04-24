@@ -1,6 +1,7 @@
 // components/tools/ToolHeader.tsx
 import type { Tool } from "@/lib/tools/registry";
-import { getToolIcon } from "@/lib/tools/icons";
+import { ICON_MAP } from "@/lib/tools/icons";
+import { Code2 } from "lucide-react";
 
 const CATEGORY_COLORS: Record<string, string> = {
   text: "#10b981",
@@ -17,7 +18,7 @@ interface Props {
 
 export function ToolHeader({ tool }: Props) {
   const color = CATEGORY_COLORS[tool.category] ?? "#818cf8";
-  const ToolIcon = getToolIcon(tool.icon);
+  const ToolIcon = ICON_MAP[tool.icon] ?? Code2;
   return (
     <div style={{ display: "flex", alignItems: "flex-start", gap: "18px", flexWrap: "wrap" }}>
       <div
