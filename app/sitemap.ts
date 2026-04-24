@@ -2,7 +2,7 @@
 import { TOOLS } from "@/lib/tools/registry";
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://toolforge.dev";
+const BASE_URL = "https://devtoolforge.tech";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const toolPages = TOOLS.map((tool) => ({

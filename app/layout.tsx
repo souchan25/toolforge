@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "ToolForge — Developer Tools, Forged to Perfection",
     description:
       "21+ free browser-based developer utilities. JSON, CSS, Color, Code — all in one place.",
-    url: "https://toolforge.dev",
+    url: "https://devtoolforge.tech",
     siteName: "ToolForge",
   },
   twitter: {
