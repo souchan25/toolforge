@@ -33,6 +33,20 @@ import { HtmlFormatter } from "@/components/tools/impl/HtmlFormatter";
 import { MarkdownPreviewer } from "@/components/tools/impl/MarkdownPreviewer";
 import { CodeToImage } from "@/components/tools/impl/CodeToImage";
 
+// New tools
+import { JsonToTs } from "@/components/tools/impl/JsonToTs";
+import { XmlToJson } from "@/components/tools/impl/XmlToJson";
+import { YamlToJson } from "@/components/tools/impl/YamlToJson";
+import { FlexboxGenerator } from "@/components/tools/impl/FlexboxGenerator";
+import { CssGridGenerator } from "@/components/tools/impl/CssGridGenerator";
+import { ImageColorExtractor } from "@/components/tools/impl/ImageColorExtractor";
+import { CronGenerator } from "@/components/tools/impl/CronGenerator";
+import { QrCodeGenerator } from "@/components/tools/impl/QrCodeGenerator";
+import { JwtDecoder } from "@/components/tools/impl/JwtDecoder";
+import { DnsLookup } from "@/components/tools/impl/DnsLookup";
+import { SqlFormatter } from "@/components/tools/impl/SqlFormatter";
+import { JsMinifier } from "@/components/tools/impl/JsMinifier";
+
 const TOOL_MAP: Record<string, React.ComponentType> = {
   "word-counter": WordCounter,
   "case-converter": CaseConverter,
@@ -58,6 +72,20 @@ const TOOL_MAP: Record<string, React.ComponentType> = {
   "html-formatter": HtmlFormatter,
   "markdown-previewer": MarkdownPreviewer,
   "code-to-image": CodeToImage,
+  
+  // New tools map
+  "json-to-ts": JsonToTs,
+  "xml-to-json": XmlToJson,
+  "yaml-to-json": YamlToJson,
+  "flexbox-generator": FlexboxGenerator,
+  "css-grid-generator": CssGridGenerator,
+  "image-color-extractor": ImageColorExtractor,
+  "cron-generator": CronGenerator,
+  "qrcode-generator": QrCodeGenerator,
+  "jwt-decoder": JwtDecoder,
+  "dns-lookup": DnsLookup,
+  "sql-formatter": SqlFormatter,
+  "js-minifier": JsMinifier,
 };
 
 interface Props {
